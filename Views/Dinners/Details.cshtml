@@ -33,6 +33,20 @@
 
 </fieldset>
 <p>
+    
+     @if (Request.IsAuthenticated) { 
+        if (Model.IsUserRegistered(Context.User.Identity.Name)) {       
+    
+        <p>You are registered for this event!</p>
+        } else {   
+        <p>You are not registered for this event</p>
+        
+         } 
+     } else { 
+     <p><a href="/Account/Login">Login</a> to RSVP for this event.</P>
+     } 
+    
+
     @if(Model.IsHostedBy(Context.User.Identity.Name))
     {
         @Html.ActionLink("Edit", "Edit", new {id = Model.DinnerID})  

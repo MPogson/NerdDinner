@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace NerdDinner.Models
 {
     using System;
@@ -36,6 +38,11 @@ namespace NerdDinner.Models
         {
             return HostedBy.Equals(userName,
                                    StringComparison.OrdinalIgnoreCase);
+        }
+
+        public bool IsUserRegistered(string userName) {
+            return RSVPs.Any(r => r.AttendeeName.Equals(userName, 
+                StringComparison.OrdinalIgnoreCase));
         }
     }
 }
