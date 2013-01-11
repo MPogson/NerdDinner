@@ -31,5 +31,11 @@ namespace NerdDinner.Models
         public double Longitude { get; set; }
     
         public virtual ICollection<RSVP> RSVPs { get; set; }
+
+        public bool IsHostedBy(string userName)
+        {
+            return HostedBy.Equals(userName,
+                                   StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

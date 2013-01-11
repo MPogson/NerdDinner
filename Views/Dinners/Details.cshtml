@@ -1,0 +1,42 @@
+﻿@model NerdDinner.Models.Dinner
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<fieldset>
+    <legend>Dinner</legend>
+    
+    <p>
+        <strong>When:</strong>
+        @Html.DisplayFor(model => model.EventDate)   
+    </p>
+    
+    <p>
+        <strong>Where:</strong>
+        @Html.DisplayFor(model => model.Address)   
+    </p>
+    
+    <p>
+        <strong>Descriptiion:</strong>
+        @Html.DisplayFor(model => model.Description)   
+    </p>
+    
+    <p>
+        <strong>Organizer:</strong>
+        @Html.DisplayFor(model => model.HostedBy)
+        (Phone: @Html.DisplayFor(model => model.ContactPhone))   
+    </p>
+    
+
+</fieldset>
+<p>
+    @if(Model.IsHostedBy(Context.User.Identity.Name))
+    {
+        @Html.ActionLink("Edit", "Edit", new {id = Model.DinnerID})  
+        @Html.ActionLink("Delete", "Delete", new {id = Model.DinnerID}) 
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

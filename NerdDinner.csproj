@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DinnersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Helpers\PaginatedList.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +175,7 @@
     <Compile Include="Models\Dinner.cs">
       <DependentUpon>NerdDinner.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DinnerFormViewModel.cs" />
     <Compile Include="Models\DinnerRepository.cs" />
     <Compile Include="Models\Dinner_Validation.cs" />
     <Compile Include="Models\NerdDinner.Context.cs">
@@ -328,6 +330,15 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Dinners\NotFound.cshtml" />
+    <Content Include="Views\Dinners\Details.cshtml" />
+    <Content Include="Views\Dinners\Index.cshtml" />
+    <Content Include="Views\Dinners\Edit.cshtml" />
+    <Content Include="Views\Dinners\Create.cshtml" />
+    <Content Include="Views\Dinners\Delete.cshtml" />
+    <Content Include="Views\Dinners\Deleted.cshtml" />
+    <Content Include="Views\Dinners\DinnerForm.cshtml" />
+    <Content Include="Views\Dinners\InvalidOwner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
